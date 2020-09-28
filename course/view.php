@@ -43,7 +43,27 @@
     }
 
     $PAGE->set_url('/course/view.php', $urlparams); // Defined here to avoid notices on errors etc
-
+    /*
+	if(empty($_GET['instance']))
+	{
+		header('Location: ' . $PAGE->url . '&instance=Moodle01');
+	}
+	else {
+		$redirect = null;
+		switch($_GET['instance']) {
+			case "Moodle01":
+				break;
+			case "Moodle02":
+				$redirect = "/course/view.php?id=2&instance=Redirect00";
+				break;
+			case "Moodle03":
+				$redirect = "/course/view.php?id=2&instance=XYZ";
+				break;
+			default: $redirect = "";
+		}
+		header('Location: ' . $redirect);
+	}
+	*/
     // Prevent caching of this page to stop confusion when changing page after making AJAX changes
     $PAGE->set_cacheable(false);
 
@@ -242,6 +262,8 @@
 
     $PAGE->set_heading($course->fullname);
     echo $OUTPUT->header();
+	
+	//$PAGE->requires->js_call_amd('local_coursetab/local_coursetab', 'init');
 
     if ($USER->editing == 1) {
 

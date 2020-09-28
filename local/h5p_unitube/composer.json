@@ -1,0 +1,18 @@
+{
+    "name": "StephanLorbek/local_h5p_unitube",
+    "description": "Replaces manual video upload with UniTube",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Stephan Lorbek",
+            "email": "stephan.lorbek@uni-graz.at"
+        }
+    ],
+    "type": "moodle-local",
+    "require": {
+      "composer/installers": "~1.0"
+    },
+    "extra": {
+      "installer-name": "h5p_unitube"
+    }
+}
